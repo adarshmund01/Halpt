@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --yellow: #F5C518;
+  --yellow-dark: #D4A800;
+  --bg: #0a0a0a;
+  --bg-card: #111111;
+  --bg-card2: #161616;
+  --border: #1e1e1e;
+  --border2: #2a2a2a;
+  --text: #ffffff;
+  --text-muted: #888888;
+  --text-dim: #555555;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  
+}
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+button { cursor: pointer; border: none; outline: none; font-family: var(--font-body); }
+input, select, textarea { font-family: var(--font-body); outline: none; }
+a { text-decoration: none; color: inherit; }
+
+/* Shared utility */
+.section-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+@media (max-width: 768px) {
+  .section-wrap { padding: 0 20px; }
+}

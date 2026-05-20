@@ -1,0 +1,78 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 56px 0 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(4, 1fr) 1.4fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.brand { display: flex; flex-direction: column; gap: 12px; }
+.logo { display: flex; align-items: center; gap: 7px; background: transparent; }
+.logoIcon {
+  width: 26px; height: 26px;
+  background: var(--yellow);
+  color: #000;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+}
+.logoText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+.tagline { font-size: 12px; color: #555; line-height: 1.6; }
+.socials { display: flex; gap: 12px; }
+.socials a { font-size: 13px; color: #666; transition: color 0.2s; }
+.socials a:hover { color: #fff; }
+
+.col { display: flex; flex-direction: column; gap: 10px; }
+.colTitle { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 2px; letter-spacing: 0.04em; }
+.link { font-size: 12.5px; color: #666; transition: color 0.2s; }
+.link:hover { color: #fff; }
+
+.newsletterSub { font-size: 12px; color: #555; margin-top: -4px; }
+.emailRow {
+  display: flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.emailInput {
+  flex: 1;
+  background: transparent;
+  color: #fff;
+  font-size: 12.5px;
+  padding: 9px 12px;
+  border: none;
+  min-width: 0;
+}
+.emailInput::placeholder { color: #444; }
+.emailBtn {
+  background: var(--yellow);
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 0 14px;
+}
+.emailBtn:hover { background: var(--yellow-dark); }
+
+.bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  font-size: 12px;
+  color: #444;
+}
+
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }

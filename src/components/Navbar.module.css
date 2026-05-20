@@ -1,0 +1,80 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 62px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,10,0.94);
+  backdrop-filter: blur(14px);
+}
+.nav {
+  background: rgba(10, 10, 10, 0.94);
+  border-bottom: 1px solid var(--border);
+}
+.links button { color: #555; }
+.links button:hover { color: #000; }
+.signin { color: #555; }
+.signin:hover { color: #000; }
+.logoText { color: #0a0a0a; }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+}
+.logoIcon {
+  width: 30px; height: 30px;
+  background: var(--yellow);
+  color: #000;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+}
+.logoText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+.links {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+.links button {
+  background: transparent;
+  font-size: 13.5px;
+  color: #999;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.links button:hover { color: #fff; }
+.actions { display: flex; align-items: center; gap: 14px; }
+.signin {
+  background: transparent;
+  font-size: 13.5px;
+  color: #999;
+  font-weight: 500;
+}
+.signin:hover { color: #fff; }
+.getStarted {
+  background: var(--yellow);
+  color: #000;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-radius: 7px;
+  transition: background 0.2s;
+}
+.getStarted:hover { background: var(--yellow-dark); }
+@media (max-width: 768px) {
+  .links { display: none; }
+  .nav { padding: 0 20px; }
+}

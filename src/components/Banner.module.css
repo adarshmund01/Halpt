@@ -1,0 +1,34 @@
+.banner {
+  background: #111;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 9px 20px;
+  font-size: 13px;
+  position: relative;
+}
+.text { color: #bbb; }
+.text strong { color: #fff; }
+.old { color: #555; text-decoration: line-through; }
+.price { color: var(--yellow); font-weight: 700; }
+.cta {
+  background: var(--yellow);
+  color: #000;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+.cta:hover { background: var(--yellow-dark); }
+.close {
+  background: transparent;
+  color: #555;
+  font-size: 13px;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.close:hover { color: #fff; }

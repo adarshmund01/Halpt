@@ -1,0 +1,98 @@
+.page { padding: 48px 0 80px; }
+
+.back {
+  background: transparent;
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 32px;
+  display: block;
+  transition: color 0.2s;
+}
+.back:hover { color: #fff; }
+
+.pageHeader { margin-bottom: 36px; }
+.num { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--yellow); }
+.title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: #fff; line-height: 1.1; margin: 4px 0 10px; }
+.sub { font-size: 14px; color: #777; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+.formCard, .gaugeCard, .projCard, .oppsCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.cardTitle { font-size: 13px; font-weight: 700; color: #ddd; margin-bottom: 16px; }
+
+.field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+.label { font-size: 11.5px; color: #666; }
+.select, .input {
+  background: #0a0a0a;
+  border: 1px solid var(--border);
+  color: #fff;
+  font-size: 13px;
+  padding: 9px 12px;
+  border-radius: 7px;
+  width: 100%;
+  appearance: none;
+}
+.select option { background: #111; }
+
+.simBtn {
+  background: var(--yellow);
+  color: #000;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 4px;
+  transition: background 0.2s;
+}
+.simBtn:hover { background: var(--yellow-dark); }
+
+/* Gauge */
+.gaugeCard { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.gauge { position: relative; width: 130px; height: 130px; margin: 8px auto; }
+.gaugeSvg { width: 100%; height: 100%; }
+.gaugeInner {
+  position: absolute;
+  inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.gaugeScore { font-family: var(--font-display); font-size: 30px; font-weight: 800; color: #fff; line-height: 1; }
+.gaugeLabel { font-size: 12px; color: #555; }
+.potential { font-size: 13px; font-weight: 700; color: var(--yellow); margin-top: 8px; }
+.potentialSub { font-size: 11.5px; color: #666; line-height: 1.5; margin-top: 4px; }
+
+/* Projections */
+.chart { display: block; height: 90px; margin: 4px 0 14px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.stat { text-align: center; }
+.statVal { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--yellow); }
+.statLabel { font-size: 10.5px; color: #666; margin-top: 2px; }
+
+/* Opportunities */
+.oppsCard { margin-bottom: 16px; }
+.oppList { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.oppList li { font-size: 13px; color: #888; }
+.oppList li::marker { color: var(--yellow); }
+
+.insight {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 9px;
+  padding: 13px 18px;
+  font-size: 13px;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.insightIcon { color: var(--yellow); font-size: 14px; }
+.insightKey { font-weight: 700; color: var(--yellow); margin-right: 4px; }
+
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }

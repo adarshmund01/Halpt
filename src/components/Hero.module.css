@@ -1,0 +1,71 @@
+.hero { padding: 100px 0 80px; }
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  gap: 0;
+}
+.badge {
+  border: 1px solid #1e1e1e;
+  background: #111;
+  color: #bbb;
+  font-size: 12px;
+  padding: 5px 16px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6vw, 70px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.accent { color: var(--yellow); }
+.sub { font-size: 16px; color: #888; line-height: 1.7; margin-bottom: 32px; }
+.scanBar {
+  display: flex;
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 460px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.scanBar:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+.scanBar:focus-within {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+.input {
+  flex: 1; background: transparent; color: #fff;
+  font-size: 14px; padding: 14px 16px; border: none;
+}
+.input::placeholder { color: #444; }
+.scanBtn {
+  background: var(--yellow); color: #000;
+  font-weight: 700; font-size: 13.5px;
+  padding: 0 20px; border-radius: 0 8px 8px 0;
+}
+.trustRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 12px;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.dot { color: var(--yellow); }
