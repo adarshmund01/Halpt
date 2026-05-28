@@ -1,0 +1,102 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.exit {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.letter {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(52px, 10vw, 96px);
+  font-weight: 800;
+  color: #fff;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: letterUp 0.5s ease forwards;
+}
+
+/* stagger each letter */
+.letter:nth-child(1) { animation-delay: 0.1s; }
+.letter:nth-child(2) { animation-delay: 0.2s; }
+.letter:nth-child(3) { animation-delay: 0.3s; }
+.letter:nth-child(4) { animation-delay: 0.4s; }
+.letter:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes letterUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dot {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  color: #F5C518;
+  opacity: 0;
+  animation: letterUp 0.5s ease 0.6s forwards;
+}
+
+.sub {
+  font-size: 13px;
+  color: #555;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  animation: letterUp 0.5s ease 0.8s forwards;
+}
+
+.dev {
+  color: #F5C518;
+  font-weight: 600;
+}
+
+.bar {
+  width: 160px;
+  height: 2px;
+  background: #1e1e1e;
+  border-radius: 999px;
+  overflow: hidden;
+  opacity: 0;
+  animation: letterUp 0.4s ease 0.9s forwards;
+}
+
+.barFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #F5C518, #f97316);
+  border-radius: 999px;
+  animation: fillBar 1.4s ease 1s forwards;
+}
+
+@keyframes fillBar {
+  to { width: 100%; }
+}

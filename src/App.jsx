@@ -11,9 +11,12 @@ import StartupStack from './pages/StartupStack';
 import CTABottom from './components/CTABottom';
 import Footer from './components/Footer';
 import BrandResults from './pages/BrandResults';
+import Loader from './components/Loader';
 
 export default function App() {
   const [page, setPage] = useState('home');
+  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   // add to useState:
 const [scanDomain, setScanDomain] = useState('');
@@ -27,6 +30,7 @@ const handleNav = (page, domain = '') => {
 
 
   return (
+    
     <div className="app">
       <Banner />
       <Navbar onNav={setPage} activePage={page} />
@@ -40,6 +44,15 @@ const handleNav = (page, domain = '') => {
           <CTABottom />
         </>
       )}
+
+      return (
+  <div className="app">
+    {loading && <Loader onComplete={() => setLoading(false)} />}
+    <Banner />
+    <Navbar onNav={handleNav} activePage={page} />
+    {/* rest of your code unchanged */}
+  </div>
+);
       {page === 'growth' && <GrowthSimulator onBack={() => setPage('home')} />}
       {page === 'chat' && <ConsultantChat onBack={() => setPage('home')} />}
       {page === 'stack' && <StartupStack onBack={() => setPage('home')} />}
