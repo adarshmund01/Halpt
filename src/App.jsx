@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Loader from './components/Loader';
 import Banner from './components/Banner';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -8,56 +9,54 @@ import AIQuotes from './components/AIQuotes';
 import GrowthSimulator from './pages/GrowthSimulator';
 import ConsultantChat from './pages/ConsultantChat';
 import StartupStack from './pages/StartupStack';
+import BrandResults from './pages/BrandResults';
 import CTABottom from './components/CTABottom';
 import Footer from './components/Footer';
-import BrandResults from './pages/BrandResults';
-import Loader from './components/Loader';
 
 export default function App() {
-  const [page, setPage] = useState('home');
-  const [isLoading, setIsLoading] = useState(true);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState('home');
+  const [scanDomain, setScanDomain] = useState('');
 
-  // add to useState:
-const [scanDomain, setScanDomain] = useState('');
-
-// update onNav to accept a second param:
-const handleNav = (page, domain = '') => {
-  setPage(page);
-  if (domain) setScanDomain(domain);
-};
-
-
+  const handleNav = (pageName, domain = '') => {
+    setPage(pageName);
+    if (domain) setScanDomain(domain);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    
     <div className="app">
+      {loading && <Loader onComplete={() => setLoading(false)} />}
+
       <Banner />
-      <Navbar onNav={setPage} activePage={page} />
+      <Navbar onNav={handleNav} activePage={page} />
 
       {page === 'home' && (
         <>
-        
-          <Hero onNav={setPage} />
-          <FeaturesStrip onNav={setPage} />
+          <Hero onNav={handleNav} />
+          <FeaturesStrip onNav={handleNav} />
           <AIQuotes />
-          <CTABottom />
+          <CTABottom onNav={handleNav} />
         </>
       )}
 
-      return (
-  <div className="app">
-    {loading && <Loader onComplete={() => setLoading(false)} />}
-    <Banner />
-    <Navbar onNav={handleNav} activePage={page} />
-    {/* rest of your code unchanged */}
-  </div>
-);
-      {page === 'growth' && <GrowthSimulator onBack={() => setPage('home')} />}
-      {page === 'chat' && <ConsultantChat onBack={() => setPage('home')} />}
-      {page === 'stack' && <StartupStack onBack={() => setPage('home')} />}
+      {page === 'results' && (
+        <BrandResults domain={scanDomain} onBack={() => handleNav('home')} />
+      )}
 
-      <Footer onNav={setPage} />
+      {page === 'growth' && (
+        <GrowthSimulator onBack={() => handleNav('home')} />
+      )}
+
+      {page === 'chat' && (
+        <ConsultantChat onBack={() => handleNav('home')} />
+      )}
+
+      {page === 'stack' && (
+        <StartupStack onBack={() => handleNav('home')} />
+      )}
+
+      <Footer onNav={handleNav} />
     </div>
   );
 }
