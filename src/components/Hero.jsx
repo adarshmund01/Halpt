@@ -7,14 +7,13 @@ export default function Hero({ onNav }) {
     <section className={s.hero}>
       <div className="section-wrap">
         <div className={s.center}>
-          <div className={s.badge}>✦ Leads + SEO + AI visibility from a single scan</div>
+          <div className={s.badge}>✦ AI Visibility, Market Intelligence & Brand Insights — From A Single Scan.</div>
           <h1 className={s.headline}>
-            See How AI Talks<br/>
-            <span className={s.accent}>About</span> Your Brand.
+            Know What The Internet Thinks.<br/>
+            <span className={s.accent}>About</span> Your Brand!!
           </h1>
           <p className={s.sub}>
-            Track and optimize how ChatGPT, Google, Reddit,<br/>
-            and AI search engines talk about your brand.
+            Analyze AI visibility, competitor traffic, customer discussions, SEO performance, and brand sentiment in one dashboard.
           </p>
           <div className={s.scanBar}>
             <input
