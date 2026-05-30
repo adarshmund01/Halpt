@@ -58,10 +58,38 @@
 .links button:hover { color: #fff; }
 .actions { display: flex; align-items: center; gap: 14px; }
 .signin {
-  background: transparent;
-  font-size: 13.5px;
-  color: #999;
-  font-weight: 500;
+  background: linear-gradient(135deg, #F5C518, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 14px;
+  font-weight: 800;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.signin::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(135deg, #F5C518, #f97316);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.signin:hover::after {
+  width: 100%;
+}
+
+.signin:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
 }
 .signin:hover { color: #fff; }
 .getStarted {

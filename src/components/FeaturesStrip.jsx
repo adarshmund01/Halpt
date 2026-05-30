@@ -3,8 +3,8 @@ import s from './FeaturesStrip.module.css';
 const features = [
   {
     num: '01',
-    title: 'AI Visibility Scanner',
-    desc: 'See how AI platforms & search engines perceive your brand and fix weak signals before competitors do.',
+    title: 'Brand Intelligence',
+    desc: 'Understand how customers, AI platforms, search engines, and communities perceive your brand.',
     highlight: 'weak signals',
     cta: 'Scan Now →',
     page: 'home',
@@ -13,7 +13,7 @@ const features = [
   },
   {
     num: '02',
-    title: 'AI Business Growth Simulator',
+    title: 'AI • Search • Social',
     desc: 'Simulate your growth potential with AI and discover the exact strategies that 2x your revenue.',
     highlight: 'exact strategies',
     cta: 'Simulate Now →',

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import Loader from './components/Loader';
-import Banner from './components/Banner';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeaturesStrip from './components/FeaturesStrip';
@@ -12,11 +11,13 @@ import StartupStack from './pages/StartupStack';
 import BrandResults from './pages/BrandResults';
 import CTABottom from './components/CTABottom';
 import Footer from './components/Footer';
+import Auth from './pages/Auth';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState('home');
   const [scanDomain, setScanDomain] = useState('');
+  const [user, setUser] = useState(null);
 
   const handleNav = (pageName, domain = '') => {
     setPage(pageName);
@@ -28,7 +29,7 @@ export default function App() {
     <div className="app">
       {loading && <Loader onComplete={() => setLoading(false)} />}
 
-      <Banner />
+      
       <Navbar onNav={handleNav} activePage={page} />
 
       {page === 'home' && (
@@ -55,6 +56,16 @@ export default function App() {
       {page === 'stack' && (
         <StartupStack onBack={() => handleNav('home')} />
       )}
+
+      {page === 'auth' && (
+         <Auth
+           onBack={() => handleNav('home')}
+           onLogin={(email) => {
+           setUser(email);
+           handleNav('home');
+    }}
+  />
+)}
 
       <Footer onNav={handleNav} />
     </div>

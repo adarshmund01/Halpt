@@ -14,8 +14,7 @@ export default function Navbar({ onNav, activePage }) {
         <li><button onClick={() => onNav('home')}>Resources ▾</button></li>
       </ul>
       <div className={s.actions}>
-        <button className={s.signin}>Sign In</button>
-        <button className={s.getStarted} onClick={() => onNav('home')}>Get Started →</button>
+        <button className={s.signin} onClick={() => onNav('auth')}>Sign In</button>
       </div>
     </nav>
   );
